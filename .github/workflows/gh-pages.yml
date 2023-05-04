@@ -15,11 +15,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: ".node-version"
-          cache: "yarn"
+          cache: "npm"
       - name: build
         run: |
-          yarn install --frozen-lockfile
-          yarn build
+          npm install --ci
+          npm run build
       - name: upload
         uses: actions/upload-pages-artifact@v1
         with:
